@@ -17,10 +17,32 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-var todaysDate = dayjs();
-$('#currentDay').text(todaysDate.format('MMMM D YYYY, h:mm:ss a'))
+var dateTime = dayjs();
+var currentTime = dayjs();
+var saveButton = $('.btn saveBtn col-2 col-md-1')
+var nineOclock = $('#hour-9');
+var tenOclock = $('#hour-10');
+var elevenOclock = $('#hour-11');
+var twelveOclock = $('#hour-12');
+var oneOclock = $('#hour-1');
+var twoOclock = $('#hour-2');
+var threeOclock = $('#hour-3');
+var fourOclock = $('#hour-4');
+var fiveOclock = $('#hour-5');
+
+
+
+
+$('#currentDay').text(dateTime.format('MMMM D YYYY, h:mm:ss a'));
+$('#currentHour').text(currentTime.format('h'))
+
+// if (currentHour != )
 
 $(function () {
+
+  saveButton.on('click', function (){
+    alert('good job')
+  });
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
     // local storage. HINT: What does `this` reference in the click listener
@@ -38,6 +60,32 @@ $(function () {
     // the values of the corresponding textarea elements. HINT: How can the id
     // attribute of each time-block be used to do this?
     //
-    // TODO: Add code to display the current date in the header of the page.
-  });
+
+
+
   
+  //array.each currenthour-timeblock =0 present -1 future else past
+  //figure out how to make each time block hour have a set comparable value i.e. 9am=9
+  
+  var workingHours = "9, 10, 11, 12, 1, 2, 3, 4, 5"
+  $('#currentHour').text(currentTime.format('h'))
+
+  function dailySchedule() {
+    var timeblocks = $(".time-block")
+    
+    for (var i = 0; i < timeblocks.length; i++) {
+      var currentHour = workingHours[i];      
+    }
+    if (currentHour-timeblock == 0) { 
+      
+      timeblocks('.present');
+    }
+    if (currentHour-timeblock < 0) {
+      //assign future styling 
+    };
+    if (currentHour-timeblock > 0) {
+      //assign past styling
+    }
+
+  }
+});
