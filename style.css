@@ -58,3 +58,11 @@ body {
     transition: all 0.3s ease-in-out;
   }
   
+  #end-of-day {
+    background-color: white;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+  }
+  
