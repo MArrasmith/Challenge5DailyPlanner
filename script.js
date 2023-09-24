@@ -20,44 +20,28 @@
 var dateTime = dayjs();
 var currentTime = dayjs().$H;
 var saveButton = $('.saveBtn')
-// var nineOclock = $('#hour-9');
-// var tenOclock = $('#hour-10');
-// var elevenOclock = $('#hour-11');
-// var twelveOclock = $('#hour-12');
-// var oneOclock = $('#hour-1');
-// var twoOclock = $('#hour-2');
-// var threeOclock = $('#hour-3');
-// var fourOclock = $('#hour-4');
-// var fiveOclock = $('#hour-5');
-
-//savebuton.each
-
-
 $('#currentDay').text(dateTime.format('MMMM D YYYY, h:mm:ss a'));
-$('#currentHour').text(currentTime)
-
-// if (currentHour != )
-
 
 
 $(function () {
 
-  // saveButton.each(function (index, element) {
-  //   console.log(element)
-  //   element.on('click', function () {
-  //     alert('good job')
-  //   });
-  // })
+  saveButton.each(function (index, element) {
+    element.addEventListener('click', function (event) {
+      console.log(event.target.getAttribute('data-id'))
+      var textArea = document.getElementById(event.target.getAttribute('data-id'))
+      console.log(textArea.value)
+      localStorage.setItem(event.target.getAttribute('data-id'), textArea.value)
+    });
+  })
 
-
-  function formatTimeBlocks() {
-    var timeblocks = $(".time-block")
+  function populateTextArea() {
+    var textAreas = $('textarea')
+    textAreas.each(function (index, textArea) {
+      var text = localStorage.getItem(textArea.getAttribute('id'))
+      textArea.value = text
+    })
   }
-
-  function formatDataHour() {
-    var dataHour = $(this).attr("data-hour")
-    console.log(dataHour)
-  }
+  populateTextArea();
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
