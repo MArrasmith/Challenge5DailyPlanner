@@ -21,6 +21,10 @@ After clicking save then no matter if you refresh, the schedule item remains in 
 ![Site3](Assets/Images/Challenge5live.3.PNG)
 ![Site4](Assets/Images/Challenge5live.2.PNG)
 
+## Site pages
+https://marrasmith.github.io/Challenge5DailyPlanner/
+https://github.com/MArrasmith/Challenge5DailyPlanner/
+
 ## License
 
 Copyright (c) 2023 Michael Arrasmith
